@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <title>💙 Cinna Valentine</title>
+  <title>Mi San Valentín 💗</title>
   <style>
     :root{
       /* Paleta “cinnamoroll vibe” (pastel cielo) */
@@ -383,7 +383,33 @@
       z-index: 50;
     }
     #musicBtn.on{ background: rgba(255,255,255,.95); }
-  </style>
+  
+/* ===== FIX: cupidos visibles en móvil ===== */
+@media (max-width: 520px){
+  #cupidLeft, #cupidRight, .cupid, .cupid-left, .cupid-right{
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  /* posición para que no tapen el texto */
+  #cupidLeft, .cupid-left{ top: 18px !important; left: 10px !important; }
+  #cupidRight, .cupid-right{ top: 18px !important; right: 10px !important; }
+  #cupidLeft img, #cupidRight img { max-width: 92px !important; }
+}
+@media (max-width: 360px){
+  #cupidLeft, .cupid-left{ top: 14px !important; left: 8px !important; }
+  #cupidRight, .cupid-right{ top: 14px !important; right: 8px !important; }
+  #cupidLeft img, #cupidRight img { max-width: 84px !important; }
+}
+
+
+/* ===== FIX: sin botón de música ===== */
+#musicToggle, #btnMusic, #toggleMusic, #audioToggle,
+.music-toggle, .toggle-music, .music-btn, .audio-btn{
+  display:none !important;
+}
+
+</style>
 </head>
 
 <body>
@@ -433,7 +459,7 @@
 
           <div class="btnRow" id="btnRow">
             <button id="btnYes" class="btn yes">Sí 💗</button>
-            <button id="btnNo" class="btn no">No 🙈</button>
+            <button id="btnNo" class="btn no">No 😭</button>
           </div>
 
           <p class="hint" id="noHint"></p>
@@ -485,7 +511,7 @@ cupidRightSrc: "assets/cinnamorollcupidright.png",
 yesMascotSrc: "assets/cinnamorollhappy.png",
 
       // Pantalla de “sí”
-      yesTitle: "¡SHIISISISIISISIS! 🥰😍",
+      yesTitle: "¡SHIIISISISI! 🥰😍",
       yesMsg: "Te amo preciosa mía, mucho muchito 🥰",
 
       // Cartita (puedes escribir lo que quieras)
